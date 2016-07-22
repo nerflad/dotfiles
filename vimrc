@@ -23,7 +23,7 @@ set hlsearch        " Highlight all matching searches
 
                     " Clear highlighted searches (and screen)
 nnoremap <C-l> :nohlsearch<CR><C-l>
-                    " https://sanctum.geek.nz/arabesque/vim-search-highlighting/ 
+                    " https://sanctum.geek.nz/arabesque/vim-search-highlighting/
 
 "set autowrite      " Automatically save before commands like :next and :make
 "set hidden         " Hide buffers when they are abandoned
@@ -48,10 +48,6 @@ colo slate
 hi LineNr ctermfg=black
 
 hi StatusLine ctermbg=black
-
-hi CursorLine cterm=none ctermbg=black
-hi CursorLineNr ctermfg=yellow ctermbg=black
-set cursorline
 
 " Highlight characters outside of long lines
 " http://stackoverflow.com/a/235970/5920858
