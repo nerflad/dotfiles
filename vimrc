@@ -47,6 +47,10 @@ set splitright
 colo slate
 hi LineNr ctermfg=black
 
+hi CursorLine cterm=none ctermbg=black
+hi CursorLineNr ctermfg=yellow
+set cursorline
+
 hi StatusLine ctermbg=black
 
 " Highlight characters outside of long lines
