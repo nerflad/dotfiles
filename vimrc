@@ -45,13 +45,13 @@ set splitright
 
 " Color and highlighting stuff
 colo slate
-hi LineNr ctermfg=black
+hi LineNr ctermfg=black guibg=black
 
-hi CursorLine cterm=none ctermbg=black
+hi CursorLine cterm=none ctermbg=black guibg=black
 hi CursorLineNr ctermfg=yellow
 set cursorline
 
-hi StatusLine ctermbg=black
+hi StatusLine ctermbg=black guibg=black
 
 " Highlight characters outside of long lines
 " http://stackoverflow.com/a/235970/5920858
@@ -61,13 +61,17 @@ hi TrailingWhitespace ctermbg=red ctermfg=black
 "match OverLength /\%81v.\+/
 match TrailingWhitespace /\s\+$/
 
-hi colorcolumn ctermbg=black ctermfg=none
+hi colorcolumn ctermbg=black ctermfg=none guibg=black
 set colorcolumn=80
 " change background color outside of 80 columns for strict line length
 " https://blog.hanschen.org/2012/10/24/different-background-color-in-vim-past-80-columns/
 "execute "set colorcolumn=" . join(range(81,355), ',')
 
+" GUI Settings
+set tb=             " No toolbar
 
+
+" Buffer bindings
 map <f2> :bprevious<CR>
 map <f3> :bnext<CR>
 map <f4> :bdelete<CR>
