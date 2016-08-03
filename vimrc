@@ -38,17 +38,16 @@ set tabstop=4
 set autoindent      " Automatically indent on newline (essential)
 
 set linebreak       " If wrapping, don't break words
-"set nowrap          " Disable line wrapping
+set nowrap          " Disable line wrapping
 
 set splitbelow      " Put splits in the expected places for the English-speaking world
 set splitright
 
 " Color and highlighting stuff
-
 if has ('gui_running')
-    colo solarized
     set guioptions-=T
     set mouse=n
+    colo solarized
 else
     colo slate
     hi colorcolumn ctermbg=black ctermfg=none guibg=black
@@ -56,9 +55,9 @@ else
     hi StatusLine ctermbg=black
 endif
 
-hi LineNr ctermfg=black guibg=black
+hi LineNr ctermbg=black ctermfg=darkgrey
 
-hi CursorLineNr ctermfg=yellow
+hi CursorLineNr ctermfg=brown
 
 
 " Highlight characters outside of long lines
@@ -71,10 +70,10 @@ match TrailingWhitespace /\s\+$/
 
 
 set cursorline
-set colorcolumn=80
+" set colorcolumn=80
 " change background color outside of 80 columns for strict line length
 " https://blog.hanschen.org/2012/10/24/different-background-color-in-vim-past-80-columns/
-"execute "set colorcolumn=" . join(range(81,355), ',')
+execute "set colorcolumn=" . join(range(81,355), ',')
 
 
 " Buffer bindings
