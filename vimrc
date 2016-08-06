@@ -49,7 +49,8 @@ if has ('gui_running')
     set mouse=n
     colo solarized
 else
-    colo slate
+"    colo slate
+    colo solarized
     hi colorcolumn ctermbg=black ctermfg=none guibg=black
     hi CursorLine cterm=none ctermbg=black guibg=black
     hi StatusLine ctermbg=black
@@ -58,14 +59,17 @@ endif
 hi LineNr ctermbg=black ctermfg=darkgrey
 
 hi CursorLineNr ctermfg=brown
-
+hi ColorColumn ctermbg=black
 
 " Highlight characters outside of long lines
 " http://stackoverflow.com/a/235970/5920858
 "hi OverLength ctermbg=red ctermfg=black
-hi TrailingWhitespace ctermbg=red ctermfg=black
-
 "match OverLength /\%81v.\+/
+
+
+
+
+hi TrailingWhitespace ctermbg=red ctermfg=black
 match TrailingWhitespace /\s\+$/
 
 
