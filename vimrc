@@ -81,9 +81,10 @@ execute "set colorcolumn=" . join(range(81,355), ',')
 
 
 " Buffer bindings
-map <f2> :bprevious<CR>
-map <f3> :bnext<CR>
-map <f4> :bdelete<CR>
+map <f2> :tabprevious<CR>
+map <f3> :tabnext<CR>
+map <f4> :tabclose<CR>
+map <f5> :tabnew<CR>
 
                     " Use a mark to preserve cursor position when joining lines
 nnoremap J mzJ`z    " https://sanctum.geek.nz/arabesque/vim-annoyances/
