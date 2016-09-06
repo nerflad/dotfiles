@@ -23,7 +23,7 @@ nnoremap <C-l> :nohlsearch<CR><C-l> " Clear highlighted searches (refresh screen
 "set autowrite      " Automatically save before commands like :next and :make
 set hidden          " Hide buffers when they are abandoned
 
-set mouse=          " Disable mouse
+set mouse=n          " Disable mouse
 
 set number          " Always show line numbers
 set ruler           " Always show cursor
@@ -43,7 +43,6 @@ set splitright
 set background=dark
 if has ('gui_running')
     set guioptions-=T
-    set mouse=n
     colo solarized
 else
     colo solarized
