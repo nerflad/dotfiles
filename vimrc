@@ -12,6 +12,7 @@ endif
 "set autowrite      " Automatically save before commands like :next and :make
 nnoremap <C-l> :nohlsearch<CR><C-l> " Clear highlighted searches (refresh screen)
 set autoindent      " Automatically indent on newline (essential)
+set backspace=indent,eol,start  " sane backspacing
 set breakindent     " If wrapping, match indentation of current line
 set expandtab       " Expand tabs to spaces
 set hidden          " Hide buffers when they are abandoned
