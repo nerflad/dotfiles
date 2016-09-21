@@ -2,7 +2,7 @@
 
 # grabs the fish auto syntax hightlighting rules from the github rust-lang repo
 
-set vimdir /usr/share/vim/vim74
+set vimdir /usr/share/vim/vim80
 
 pushd $vimdir/syntax
 sudo wget https://raw.githubusercontent.com/rust-lang/rust.vim/master/syntax/rust.vim
