@@ -33,6 +33,7 @@ set tabstop=4
 set autoindent      " Automatically indent on newline (essential)
 
 set linebreak       " If wrapping, don't break words
+set breakindent     " If wrapping, match indentation of current line
 set nowrap          " Disable line wrapping
 
 set splitbelow      " Put splits in the expected places for the English-speaking world
