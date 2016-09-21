@@ -3,43 +3,34 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/swap
 
 set nocompatible    " Use Vim defaults instead of 100% vi compatiblity
-
 set fileencodings=utf-8 "UTF-8 everywhere
 
 if has("syntax")    " Enable syntax highlighting
   syntax on
 endif
 
-set history=50
-set suffixes=".bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
-
-set showcmd         " Show (partial) command in status line.
-set showmatch       " Show matching brackets.
-set ignorecase      " Do case insensitive matching
-set smartcase       " Do smart case matching
-
-set incsearch       " Incremental search
-set hlsearch        " Highlight all matching searches
-nnoremap <C-l> :nohlsearch<CR><C-l> " Clear highlighted searches (refresh screen)
-
 "set autowrite      " Automatically save before commands like :next and :make
+nnoremap <C-l> :nohlsearch<CR><C-l> " Clear highlighted searches (refresh screen)
+set autoindent      " Automatically indent on newline (essential)
+set breakindent     " If wrapping, match indentation of current line
+set expandtab       " Expand tabs to spaces
 set hidden          " Hide buffers when they are abandoned
-
-set mouse=n          " Disable mouse
-
+set history=50
+set hlsearch        " Highlight all matching searches
+set ignorecase      " Do case insensitive matching
+set incsearch       " Incremental search
+set linebreak       " If wrapping, don't break words
+set mouse=n         " Disable visual mouse
+set nowrap          " Disable line wrapping
 set number          " Always show line numbers
 set ruler           " Always show cursor
-
-set expandtab       " Expand tabs to spaces
-set tabstop=4
-set autoindent      " Automatically indent on newline (essential)
-
-set linebreak       " If wrapping, don't break words
-set breakindent     " If wrapping, match indentation of current line
-set nowrap          " Disable line wrapping
-
+set showcmd         " Show (partial) command in status line.
+set showmatch       " Show matching brackets.
+set smartcase       " Do smart case matching
 set splitbelow      " Put splits in the expected places for the English-speaking world
 set splitright
+set suffixes=".bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
+set tabstop=4
 
 
 " Color and highlighting stuff
@@ -55,7 +46,6 @@ else
 endif
 
 hi LineNr ctermbg=black ctermfg=darkgrey
-
 hi CursorLineNr ctermfg=brown
 hi ColorColumn ctermbg=black
 
