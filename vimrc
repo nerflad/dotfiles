@@ -1,4 +1,3 @@
-runtime! archlinux.vim
 
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
@@ -10,6 +9,9 @@ set fileencodings=utf-8 "UTF-8 everywhere
 if has("syntax")    " Enable syntax highlighting
   syntax on
 endif
+
+set history=50
+set suffixes=".bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
