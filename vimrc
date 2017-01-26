@@ -35,12 +35,10 @@ set tabstop=4
 
 
 " Color and highlighting stuff
-set background=dark
+colo solarized
 if has ('gui_running')
     set guioptions-=T
-    colo solarized
 else
-    colo solarized
     hi colorcolumn ctermbg=black ctermfg=none guibg=black
     hi CursorLine cterm=none ctermbg=black guibg=black
     hi StatusLine ctermbg=black
@@ -50,8 +48,10 @@ hi LineNr ctermbg=black ctermfg=darkgrey
 hi CursorLineNr ctermfg=brown
 hi ColorColumn ctermbg=black
 
+set background=light
 hi TrailingWhitespace ctermbg=red ctermfg=black
 match TrailingWhitespace /\s\+$/
+
 
 set cursorline
 " set colorcolumn=80
