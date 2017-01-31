@@ -12,7 +12,7 @@ do
     file=`basename $i`
     ln -s $i ~/.config/fish/functions/$file && echo ~/.config/fish/functions/$file
 done
-
+ln -s $PWD/config.fish ~/.config/fish/config.fish && echo config.fish
 ln -s $PWD/vimrc ~/.vimrc && echo ~/.vimrc
 
 
