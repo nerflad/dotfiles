@@ -79,7 +79,7 @@ map <C-b> :buffers<CR>
 nnoremap J mzJ`z    " Use a mark to preserve cursor position when joining lines
 
 " Swap boolean truthiness keywords using increment/decrement keys :)
-function AlternateFacts()
+function! AlternateFacts()
     if expand('<cword>') == "True"
         execute "normal! ciwFalse"
     elseif expand('<cword>') == "False"
