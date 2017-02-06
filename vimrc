@@ -78,6 +78,17 @@ map <C-b> :buffers<CR>
 
 nnoremap J mzJ`z    " Use a mark to preserve cursor position when joining lines
 
+" Swap boolean truthiness keywords using increment/decrement keys :)
+function AlternateFacts()
+    if expand('<cword>') == "True"
+        execute "normal! ciwFalse"
+    elseif expand('<cword>') == "False"
+        execute "normal! ciwTrue"
+    endif
+endfunction
+
+nnoremap <c-a> :call AlternateFacts()<CR><C-a>
+nnoremap <c-x> :call AlternateFacts()<CR><C-x>
 
 " CREDITS
 " vim.wikia.com/wiki/Vim_Tips_Wiki
