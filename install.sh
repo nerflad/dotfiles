@@ -6,22 +6,17 @@ fi
 
 
 echo Creating .vim directory tree if necessary...
-if ! [ -d ~/.vim ]; then
-    mkdir ~/.vim
-    mkdir ~/.vim/backup
-    mkdir ~/.vim/swap
-fi
+for i in .vim .vim/backup .vim/swap .vim/bundle .vim/autoload
+do
+    if ! [ -d ~/$i ]; then
+        mkdir ~/$i
+    fi
+done
 
-
-
-echo Installing pathogen...
-if ! [ -d ~/.vim/bundle ]; then
-    mkdir ~/.vim/bundle
+if ! [ -e ~/.vim/autoload/pathogen.vim ]; then
+    echo Installing pathogen...
+    curl -Lsso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 fi
-if ! [ -d ~/.vim/autoload ]; then
-    mkdir ~/.vim/autoload
-fi
-curl -Lsso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # download pathogen plugins
 pushd ~/.vim/bundle
