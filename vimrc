@@ -36,6 +36,7 @@ set hidden          " Hide buffers when they are abandoned
 set history=50      " Remember previous 50 commands
 set hlsearch        " Highlight all matching searches
 set incsearch       " Incremental search
+set laststatus=2    " Always show statusline
 set linebreak       " If wrapping, don't break words
 set mouse=          " Disable mouse
 set nowrap          " Disable line wrapping
