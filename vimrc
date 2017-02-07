@@ -1,23 +1,34 @@
 " Eric Bailey   nerflad@gmail.com
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
-
+set fileencodings=utf-8
 set nocompatible    " Use Vim defaults instead of 100% vi compatiblity
-set fileencodings=utf-8 "UTF-8 everywhere
 
 
-" Initialize pathogen plugins
+
+
+" Initialize pathogen and configure some plugin values
 execute pathogen#infect()
-" let g:airline_powerline_fonts = 1
+
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='solarized'
+let g:airline_theme='base16_ashes'
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:signify_vcs_list = [ 'git' ]
+
+
+
+
 
 if has("syntax")    " Enable syntax highlighting
   syntax on
 endif
 
-"set autowrite      " Automatically save before commands like :next and :make
-nnoremap <C-l> :nohlsearch<CR><C-l> " Clear highlighted searches (refresh screen)
+                    " Clear highlighted searches (refresh screen)
+nnoremap <C-l> :nohlsearch<CR><C-l>
 set autoindent      " Automatically indent on newline
 set backspace=indent,eol,start  " Make backspacing work as expected
 set breakindent     " If wrapping, match indentation of current line
@@ -35,11 +46,11 @@ set showmatch       " Show matching brackets.
 set ignorecase      " Do case insensitive matching...
 set smartcase       " ...unless using capital letters
 set splitbelow      " Put splits in the expected places for the English-speaking world
-set splitright      " ''
+set splitright      " ^^
 set suffixes=".bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 set tabstop=4       " Set tab stops
-set shiftwidth=4    "
-set softtabstop=4   "
+set shiftwidth=4    " ^^
+set softtabstop=4   " ^^
 set expandtab       " Expand tabs to spaces
 
 " Color and highlighting stuff
@@ -48,14 +59,12 @@ colo solarized
 if has ('gui_running')
     set guioptions-=T
 else
-    hi colorcolumn ctermbg=black ctermfg=none guibg=black
+    hi ColorColumn ctermbg=black ctermfg=none guibg=black
     hi CursorLine cterm=none ctermbg=black guibg=black
-    hi StatusLine ctermbg=black
 endif
 
 hi LineNr ctermbg=black ctermfg=darkgrey
 hi CursorLineNr ctermfg=brown
-hi ColorColumn ctermbg=black
 
 set background=light " This must go after other highlight rules so they aren't overridden
 
@@ -68,29 +77,27 @@ execute "set colorcolumn=" . join(range(81,355), ',')
 
 
 " Buffer bindings
-
 map <f2> :bprevious<CR>
 map <f3> :bnext<CR>
 map <f4> :bdelete<CR>
-map <f5> :tabnew<CR>
 
-map <C-b> :buffers<CR>
 
-nnoremap J mzJ`z    " Use a mark to preserve cursor position when joining lines
+" Use a mark to preserve cursor position when joining lines
+nnoremap J mzJ`z
 
 " Swap boolean truthiness keywords using increment/decrement keys :)
-function! AlternateFacts()
+function! ProvideAlternativeFacts()
     if expand('<cword>') == "True"
         execute "normal! ciwFalse"
     elseif expand('<cword>') == "False"
         execute "normal! ciwTrue"
     endif
 endfunction
-
-nnoremap <c-a> :call AlternateFacts()<CR><C-a>
-nnoremap <c-x> :call AlternateFacts()<CR><C-x>
+nnoremap <c-a> :call ProvideAlternativeFacts()<CR><C-a>
+nnoremap <c-x> :call ProvideAlternativeFacts()<CR><C-x>
 
 " CREDITS
+" A lot of stuff from the default Debian and Arch Linux vimrc's
 " vim.wikia.com/wiki/Vim_Tips_Wiki
 " https://sanctum.geek.nz/arabesque/vim-search-highlighting/
 " https://sanctum.geek.nz/arabesque/vim-annoyances/
