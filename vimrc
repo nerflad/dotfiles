@@ -3,7 +3,7 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/swap
 set fileencodings=utf-8
 set nocompatible    " Use Vim defaults instead of 100% vi compatiblity
-
+set suffixes=".bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
 
 
@@ -27,31 +27,37 @@ if has("syntax")    " Enable syntax highlighting
   syntax on
 endif
 
-                    " Clear highlighted searches (refresh screen)
-nnoremap <C-l> :nohlsearch<CR><C-l>
 set autoindent      " Automatically indent on newline
 set backspace=indent,eol,start  " Make backspacing work as expected
+
+set nowrap          " Disable line wrapping
 set breakindent     " If wrapping, match indentation of current line
-set hidden          " Hide buffers when they are abandoned
-set history=50      " Remember previous 50 commands
+set linebreak       " If wrapping, don't break words
+
+
+" Clear highlighted searches (refresh screen)
+nnoremap <C-l> :nohlsearch<CR><C-l>
 set hlsearch        " Highlight all matching searches
 set incsearch       " Incremental search
-set laststatus=2    " Always show statusline
-set linebreak       " If wrapping, don't break words
-set mouse=          " Disable mouse
-set nowrap          " Disable line wrapping
-set number          " Always show line numbers
-set ruler           " Always show cursor
-set showcmd         " Show (partial) command in status line.
-set showmatch       " Show matching brackets.
 set ignorecase      " Do case insensitive matching...
 set smartcase       " ...unless using capital letters
+
+set laststatus=2    " Always show statusline
+set showcmd         " Show (partial) command in status line.
+
+set mouse=          " Disable mouse
+set number          " Always show line numbers
+set ruler           " Always show cursor
+set hidden          " Hide buffers when they are abandoned
+set history=50      " Remember previous 50 commands
+set showmatch       " Show matching brackets.
+
 set splitbelow      " Put splits in the expected places for the English-speaking world
-set splitright      " ^^
-set suffixes=".bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
+set splitright      "
+
 set tabstop=4       " Set tab stops
-set shiftwidth=4    " ^^
-set softtabstop=4   " ^^
+set shiftwidth=4    "
+set softtabstop=4   "
 set expandtab       " Expand tabs to spaces
 
 " Color and highlighting stuff
