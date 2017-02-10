@@ -103,6 +103,21 @@ endfunction
 nnoremap <c-a> :call ProvideAlternativeFacts()<CR><C-a>
 nnoremap <c-x> :call ProvideAlternativeFacts()<CR><C-x>
 
+
+" Toggle syntax highlighting with F1
+function! NerfladSyntaxOff()
+    execute "set syntax=off"
+    execute "noremap <F1> :call NerfladSyntaxOn()<CR>"
+endfunction
+
+function! NerfladSyntaxOn()
+    execute "set syntax=on"
+    execute "noremap <F1> :call NerfladSyntaxOff()<CR>"
+endfunction
+
+noremap <F1> :call NerfladSyntaxOff()<CR>
+
+
 " CREDITS
 " A lot of stuff from the default Debian and Arch Linux vimrc's
 " vim.wikia.com/wiki/Vim_Tips_Wiki
