@@ -1,5 +1,12 @@
 #!/usr/bin/fish
 
+set wget (which wget > /dev/null ^ /dev/null)
+
+if [ -z $wget ]
+    echo This script depends on wget. Install it to continue.
+    exit 1
+end
+
 # grabs the fish auto syntax highlighting rules for fish scripts from the
 # github user vim-scripts repository.
 
