@@ -1,14 +1,13 @@
 #!/usr/bin/fish
 
-set wget (which wget > /dev/null ^ /dev/null)
+set wget (which wget ^ /dev/null)
 
 if [ -z $wget ]
     echo This script depends on wget. Install it to continue.
     exit 1
 end
 
-# grabs the fish auto syntax highlighting rules for fish scripts from the
-# github user vim-scripts repository.
+# grabs the fish syntax highlighting rules for vim from github
 
 pushd /usr/share/vim/vim80/syntax
 sudo wget https://raw.githubusercontent.com/vim-scripts/fish-syntax/master/syntax/fish.vim

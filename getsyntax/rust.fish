@@ -1,13 +1,13 @@
 #!/usr/bin/fish
+# grabs the rust syntax hightlighting rules for vim from the github rust-lang repo
 
-set wget (which wget > /dev/null ^ /dev/null)
+set wget (which wget ^ /dev/null)
 
 if [ -z $wget ]
     echo This script depends on wget. Install it to continue.
     exit 1
 end
 
-# grabs the fish auto syntax hightlighting rules from the github rust-lang repo
 
 set vimdir /usr/share/vim/vim80
 
