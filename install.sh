@@ -36,6 +36,7 @@ do
 done
 ln -s $PWD/config.fish ~/.config/fish/config.fish && echo config.fish
 ln -s $PWD/vimrc ~/.vimrc && echo ~/.vimrc
+ln -s $PWD/screenrc ~/.screenrc && echo ~/.screenrc
 
 
 
