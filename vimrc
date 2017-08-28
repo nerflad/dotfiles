@@ -48,6 +48,7 @@ set showcmd         " Show (partial) command in status line.
 set mouse=          " Disable mouse
 set number          " Always show line numbers
 set numberwidth=3   " Don't show obnoxiously large number column
+set relativenumber  " Show line numbers relative to cursor
 set ruler           " Always show cursor
 set hidden          " Hide buffers when they are abandoned
 set history=50      " Remember previous 50 commands
