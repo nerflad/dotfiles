@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# check depends
+which curl git sudo >/dev/null
+
+if [ $? -gt 0 ]; then
+    echo "One or more dependencies is not met."
+    exit 1
+fi
+
 if ! [ $PWD ]; then
     PWD=`pwd`
 fi
@@ -20,10 +28,10 @@ fi
 
 # download pathogen plugins
 pushd ~/.vim/bundle
-    git clone https://github.com/vim-airline/vim-airline
-    git clone https://github.com/vim-airline/vim-airline-themes
-    git clone https://github.com/mhinz/vim-signify
-    git clone https://github.com/pangloss/vim-javascript
+    git clone https://github.com/vim-airline/vim-airline || (pushd vim-airline; git pull; popd)
+    git clone https://github.com/vim-airline/vim-airline-themes || (pushd vim-airline-themes; git pull; popd)
+    git clone https://github.com/mhinz/vim-signify || (pushd vim-signify; git pull; popd)
+    git clone https://github.com/pangloss/vim-javascript || (pushd vim-signify; git pull; popd)
 popd
 
 
