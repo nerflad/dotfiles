@@ -117,17 +117,16 @@ nnoremap <c-x> :call ProvideAlternativeFacts()<CR><C-x>
 " }}}
 
 " {{{ Toggle syntax highlighting with F1
-function! NerfladSyntaxOff()
-    execute "set syntax=off"
-    execute "noremap <F1> :call NerfladSyntaxOn()<CR>"
+
+function! NerfladSyntax()
+    if &syntax == "off"
+        execute "set syntax=on"
+    elseif &syntax != "off"
+        execute "set syntax=off"
+    endif
 endfunction
 
-function! NerfladSyntaxOn()
-    execute "set syntax=on"
-    execute "noremap <F1> :call NerfladSyntaxOff()<CR>"
-endfunction
-
-noremap <F1> :call NerfladSyntaxOff()<CR>
+noremap <F1> :call NerfladSyntax()<CR>
 
 " }}}
 
