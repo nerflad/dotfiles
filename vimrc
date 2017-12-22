@@ -85,6 +85,7 @@ match TrailingWhitespace /\s\+$/
 
 set cursorline
 execute "set colorcolumn=" . join(range(81,355), ',')
+""" match ErrorMsg '\%>80v.\+'  """ Highlight all characters past 80 columns
 
 " }}}
 
