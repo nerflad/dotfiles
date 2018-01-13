@@ -8,10 +8,6 @@ if [ $? -gt 0 ]; then
     exit 1
 fi
 
-if ! [ $PWD ]; then
-    PWD=`pwd`
-fi
-
 
 echo Creating .vim directory tree if necessary...
 for i in .vim .vim/backup .vim/swap .vim/bundle .vim/autoload
@@ -37,19 +33,19 @@ popd
 
 
 echo Creating /home symlinks...
-for i in $PWD/fish/*.fish
+for i in $(pwd)/fish/*.fish
 do
     file=`basename $i`
     ln -s $i ~/.config/fish/functions/$file && echo ~/.config/fish/functions/$file
 done
-ln -s $PWD/config.fish ~/.config/fish/config.fish && echo config.fish
-ln -s $PWD/vimrc ~/.vimrc && echo ~/.vimrc
-ln -s $PWD/screenrc ~/.screenrc && echo ~/.screenrc
+ln -s $(pwd)/config.fish ~/.config/fish/config.fish && echo config.fish
+ln -s $(pwd)/vimrc ~/.vimrc && echo ~/.vimrc
+ln -s $(pwd)/screenrc ~/.screenrc && echo ~/.screenrc
 
 
 
 echo Creating privileged symlinks...
-sudo ln -s $PWD/solarized.vim /usr/share/vim/vim80/colors/solarized.vim &&\
+sudo ln -s $(pwd)/solarized.vim /usr/share/vim/vim80/colors/solarized.vim &&\
     echo /usr/share/vim/vim80/colors/solarized.vim
 read -p "Overwrite global vimrc, backing up original? (y/N): " choice
 case $choice in
@@ -58,6 +54,6 @@ case $choice in
             currenttime=`date +"%T"`
             sudo mv /etc/vimrc /etc/vimrc.$currenttime.bak
         fi
-        sudo ln -s $PWD/vimrc /etc/vimrc || echo /etc/vimrc;;
+        sudo ln -s $(pwd)/vimrc /etc/vimrc || echo /etc/vimrc;;
     * )
 esac
