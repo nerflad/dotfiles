@@ -28,6 +28,7 @@ pushd ~/.vim/bundle
     git clone https://github.com/vim-airline/vim-airline-themes || (pushd vim-airline-themes; git pull; popd)
     git clone https://github.com/mhinz/vim-signify || (pushd vim-signify; git pull; popd)
     git clone https://github.com/pangloss/vim-javascript || (pushd vim-signify; git pull; popd)
+    git clone https://github.com/mhinz/vim-startify || (pushd vim-startify; git pull; popd)
 popd
 
 
