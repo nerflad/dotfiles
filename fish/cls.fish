@@ -1,3 +1,3 @@
 function cls --description 'Old habits die hard'
-    clear
+    reset
 end

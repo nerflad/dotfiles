@@ -77,7 +77,7 @@ endif
 hi LineNr ctermbg=black ctermfg=darkgrey
 hi CursorLineNr ctermfg=brown
 
-set background=dark " This must go after other highlight rules so they aren't overridden
+set background=light " This must go after other highlight rules so they aren't overridden
 
 " solarized.vim has its own whitespace highlight rule, which we override here
 hi TrailingWhitespace ctermbg=red ctermfg=black
