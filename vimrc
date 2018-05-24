@@ -48,7 +48,7 @@ set showcmd         " Show (partial) command in status line.
 set mouse=          " Disable mouse
 set number          " Always show line numbers
 set numberwidth=3   " Don't show obnoxiously large number column
-set relativenumber  " Show line numbers relative to cursor
+" set relativenumber  " Show line numbers relative to cursor
 set ruler           " Always show cursor
 set hidden          " Hide buffers when they are abandoned
 set history=50      " Remember previous 50 commands
@@ -77,7 +77,7 @@ endif
 hi LineNr ctermbg=black ctermfg=darkgrey
 hi CursorLineNr ctermfg=brown
 
-set background=light " This must go after other highlight rules so they aren't overridden
+set background=dark " This must go after other highlight rules so they aren't overridden
 
 " solarized.vim has its own whitespace highlight rule, which we override here
 hi TrailingWhitespace ctermbg=red ctermfg=black
