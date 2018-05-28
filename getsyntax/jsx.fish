@@ -10,19 +10,19 @@ end
 # grabs the jsx syntax highlighting rules for vim from github
 
 # this directory sometimes doesn't exist
-if not [ -d /usr/share/vim/vim80/ftdetect ]
-    sudo mkdir /usr/share/vim/vim80/ftdetect
+if not [ -d /usr/share/vim/vim81/ftdetect ]
+    sudo mkdir /usr/share/vim/vim81/ftdetect
 end
-pushd /usr/share/vim/vim80/ftdetect
+pushd /usr/share/vim/vim81/ftdetect
 sudo wget https://raw.githubusercontent.com/mxw/vim-jsx/master/ftdetect/javascript.vim
 
-cd /usr/share/vim/vim80/syntax
+cd /usr/share/vim/vim81/syntax
 sudo wget https://raw.githubusercontent.com/mxw/vim-jsx/master/after/syntax/jsx.vim
 
-cd /usr/share/vim/vim80/ftplugin
+cd /usr/share/vim/vim81/ftplugin
 sudo wget https://raw.githubusercontent.com/mxw/vim-jsx/master/after/ftplugin/jsx.vim
 
-cd /usr/share/vim/vim80/indent
+cd /usr/share/vim/vim81/indent
 sudo wget https://raw.githubusercontent.com/mxw/vim-jsx/master/after/indent/jsx.vim
 
 popd

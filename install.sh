@@ -46,8 +46,8 @@ ln -s $(pwd)/screenrc ~/.screenrc && echo ~/.screenrc
 
 
 echo Creating privileged symlinks...
-sudo ln -s $(pwd)/solarized.vim /usr/share/vim/vim80/colors/solarized.vim &&\
-    echo /usr/share/vim/vim80/colors/solarized.vim
+sudo ln -s $(pwd)/solarized.vim /usr/share/vim/vim81/colors/solarized.vim &&\
+    echo /usr/share/vim/vim81/colors/solarized.vim
 read -p "Overwrite global vimrc, backing up original? (y/N): " choice
 case $choice in
     y|Y )

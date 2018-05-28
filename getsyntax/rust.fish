@@ -9,7 +9,7 @@ if [ -z $wget ]
 end
 
 
-set vimdir /usr/share/vim/vim80
+set vimdir /usr/share/vim/vim81
 
 pushd $vimdir/syntax
 sudo wget https://raw.githubusercontent.com/rust-lang/rust.vim/master/syntax/rust.vim
