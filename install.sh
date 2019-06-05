@@ -10,7 +10,7 @@ fi
 
 
 echo Creating .vim directory tree if necessary...
-for i in .vim .vim/backup .vim/swap .vim/bundle .vim/autoload
+for i in .vim .vim/backup .vim/swap .vim/bundle .vim/autoload .vim/colors .vim/ftdetect .vim/ftplugin
 do
     if ! [ -d ~/$i ]; then
         mkdir ~/$i
@@ -43,18 +43,23 @@ ln -s $(pwd)/config.fish ~/.config/fish/config.fish && echo config.fish
 ln -s $(pwd)/vimrc ~/.vimrc && echo ~/.vimrc
 ln -s $(pwd)/screenrc ~/.screenrc && echo ~/.screenrc
 
+ln -s $(pwd)/solarized.vim ~/.vim/colors/solarized.vim
 
 
-echo Creating privileged symlinks...
-sudo ln -s $(pwd)/solarized.vim /usr/share/vim/vim81/colors/solarized.vim &&\
-    echo /usr/share/vim/vim81/colors/solarized.vim
-read -p "Overwrite global vimrc, backing up original? (y/N): " choice
+read -p "Create privileged symlinks? (y/N): " choice
 case $choice in
     y|Y )
-        if [ -f /etc/vimrc ]; then
-            currenttime=`date +"%T"`
-            sudo mv /etc/vimrc /etc/vimrc.$currenttime.bak
-        fi
-        sudo ln -s $(pwd)/vimrc /etc/vimrc || echo /etc/vimrc;;
+        sudo ln -s $(pwd)/solarized.vim /usr/share/vim/vim81/colors/solarized.vim &&\
+            echo /usr/share/vim/vim81/colors/solarized.vim
+        read -p "Overwrite global vimrc, backing up original? (y/N): " choice
+        case $choice in
+            y|Y )
+                if [ -f /etc/vimrc ]; then
+                    currenttime=`date +"%T"`
+                    sudo mv /etc/vimrc /etc/vimrc.$currenttime.bak
+                fi
+                sudo ln -s $(pwd)/vimrc /etc/vimrc || echo /etc/vimrc;;
+            * )
+        esac;;
     * )
 esac
