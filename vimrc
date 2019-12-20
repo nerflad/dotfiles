@@ -103,6 +103,8 @@ if has("eval")
   let is_bash=1
 endif
 
+" sudo write with :w!!
+cmap w!! w !sudo tee > /dev/null %
 
 " {{{ AlternativeFacts.vim
 " Swap boolean truthiness keywords using increment/decrement keys :)

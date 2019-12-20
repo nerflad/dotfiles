@@ -24,11 +24,13 @@ fi
 
 # download pathogen plugins
 pushd ~/.vim/bundle
-    git clone https://github.com/vim-airline/vim-airline || (pushd vim-airline; git pull; popd)
-    git clone https://github.com/vim-airline/vim-airline-themes || (pushd vim-airline-themes; git pull; popd)
-    git clone https://github.com/mhinz/vim-signify || (pushd vim-signify; git pull; popd)
-    git clone https://github.com/pangloss/vim-javascript || (pushd vim-signify; git pull; popd)
-    git clone https://github.com/mhinz/vim-startify || (pushd vim-startify; git pull; popd)
+    git clone https://github.com/vim-airline/vim-airline 2>/dev/null || (pushd vim-airline; git pull; popd)
+    git clone https://github.com/vim-airline/vim-airline-themes 2>/dev/null || (pushd vim-airline-themes; git pull; popd)
+    git clone https://github.com/qpkorr/vim-bufkill 2>/dev/null || (pushd vim-bufkill; git pull; popd)
+    git clone https://github.com/jamessan/vim-gnupg 2>/dev/null || (pushd vim-gnupg; git pull; popd)
+    git clone https://github.com/mhinz/vim-signify 2>/dev/null || (pushd vim-signify; git pull; popd)
+    git clone https://github.com/pangloss/vim-javascript 2>/dev/null || (pushd vim-signify; git pull; popd)
+    git clone https://github.com/mhinz/vim-startify 2>/dev/null || (pushd vim-startify; git pull; popd)
 popd
 
 
@@ -37,13 +39,13 @@ echo Creating /home symlinks...
 for i in $(pwd)/fish/*.fish
 do
     file=`basename $i`
-    ln -s $i ~/.config/fish/functions/$file && echo ~/.config/fish/functions/$file
+    ln -s $i ~/.config/fish/functions/$file 2>/dev/null && echo ~/.config/fish/functions/$file
 done
-ln -s $(pwd)/config.fish ~/.config/fish/config.fish && echo config.fish
-ln -s $(pwd)/vimrc ~/.vimrc && echo ~/.vimrc
-ln -s $(pwd)/screenrc ~/.screenrc && echo ~/.screenrc
+ln -s $(pwd)/config.fish ~/.config/fish/config.fish 2>/dev/null && echo config.fish
+ln -s $(pwd)/vimrc ~/.vimrc 2>/dev/null && echo ~/.vimrc
+ln -s $(pwd)/screenrc ~/.screenrc 2>/dev/null && echo ~/.screenrc
 
-ln -s $(pwd)/solarized.vim ~/.vim/colors/solarized.vim
+ln -s $(pwd)/solarized.vim ~/.vim/colors/solarized.vim 2>/dev/null
 
 
 read -p "Create privileged symlinks? (y/N): " choice
