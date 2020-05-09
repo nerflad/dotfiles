@@ -51,6 +51,9 @@ ln -s $(pwd)/solarized.vim ~/.vim/colors/solarized.vim 2>/dev/null
 read -p "Create privileged symlinks? (y/N): " choice
 case $choice in
     y|Y )
+        sudo mv /etc/wikicurses.conf /etc/wikicurses.conf.bak
+        sudo ln -s $(pwd)/wikicurses.conf /etc/wikicurses.conf
+
         sudo ln -s $(pwd)/solarized.vim /usr/share/vim/vim82/colors/solarized.vim &&\
             echo /usr/share/vim/vim82/colors/solarized.vim
         read -p "Overwrite global vimrc, backing up original? (y/N): " choice
