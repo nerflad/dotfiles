@@ -8,6 +8,7 @@ which curl git sudo >/dev/null
 # vim plugin list
 # structure: (username repo-name)
 declare -ar plugins=(
+    vim-scripts     restore_view.vim
     vim-airline     vim-airline
     vim-airline     vim-airline-themes
     qpkorr          vim-bufkill
