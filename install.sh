@@ -8,6 +8,7 @@ which curl git sudo >/dev/null
 # vim plugin list
 # structure: (username repo-name)
 declare -ar plugins=(
+    Pprovost        vim-ps1
     vim-scripts     Colour-Sampler-Pack
     vim-scripts     ScrollColors
     vim-scripts     restore_view.vim
