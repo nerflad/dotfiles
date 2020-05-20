@@ -96,8 +96,8 @@ map <f4> :bdelete<CR>
 " }}}
 
 " {{{ Views and Folds
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+autocmd BufWinLeave * mkview
+autocmd BufWinEnter * silent loadview
 " }}}
 
 " Use a mark to preserve cursor position when joining lines
