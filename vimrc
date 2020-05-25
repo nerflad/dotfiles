@@ -28,6 +28,7 @@ endif
 
 set ai              " Always set auto-indenting on
 set bs=2            " Backspace over everything in insert mode
+set tw=80           " Auto line break at 80 columns
 
 set nowrap          " Disable line wrapping
 set breakindent     " If wrapping, match indentation of current line
