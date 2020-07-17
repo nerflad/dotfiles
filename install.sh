@@ -19,6 +19,7 @@ declare -ar plugins=(
     pangloss        vim-javascript
     mhinz           vim-startify
     mustache        vim-mustache-handlebars
+    mattn           emmet-vim
 );
 
 # symlinks
