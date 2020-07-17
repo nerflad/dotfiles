@@ -28,7 +28,7 @@ endif
 
 set ai              " Always set auto-indenting on
 set bs=2            " Backspace over everything in insert mode
-set tw=80           " Auto line break at 80 columns
+" set tw=80           " Auto line break at 80 columns
 
 set nowrap          " Disable line wrapping
 set breakindent     " If wrapping, match indentation of current line
@@ -119,6 +119,14 @@ function! ProvideAlternativeFacts()
         execute "normal! ciwFalse"
     elseif expand('<cword>') == "False"
         execute "normal! ciwTrue"
+    elseif expand('<cword>') == "true"
+        execute "normal! ciwfalse"
+    elseif expand('<cword>') == "false"
+        execute "normal! ciwtrue"
+    elseif expand('<cword>') ==? "on"
+        execute "normal! ciwoff"
+    elseif expand('<cword>') ==? "off"
+        execute "normal! ciwon"
     endif
 endfunction
 nnoremap <c-a> :call ProvideAlternativeFacts()<CR><C-a>
@@ -148,4 +156,4 @@ noremap <F1> :call NerfladSyntax()<CR>
 " https://blog.hanschen.org/2012/10/24/different-background-color-in-vim-past-80-columns/
 " }}}
 
-" vim: set fenc=utf-8 tw=80 foldmethod=marker :
+" vim: set fenc=utf-8 foldmethod=marker :
