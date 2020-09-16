@@ -18,6 +18,7 @@ declare -ar plugins=(
     mhinz           vim-signify
     pangloss        vim-javascript
     mhinz           vim-startify
+    chrisbra        unicode.vim
     mustache        vim-mustache-handlebars
     mattn           emmet-vim
 );
